@@ -1,6 +1,6 @@
 # Infrastructure Deployment Guide
 
-This document outlines the steps to deploy and manage the infrastructure for the network and web server components.  We will be using Terraform to provision and manage the infrastructure, and SSH for accessing the deployed instances.
+This document outlines the steps to deploy and manage the infrastructure for the network and web server components.  We will be using Terraform to provision and manage the infrastructure, and SSH for accessing the deployed instances apart from that we will be using ALB to access apace webserver which are deployed in the non production env.
 
 ## Prerequisites
 
@@ -51,7 +51,7 @@ A shared S3 bucket named `env-aftabsbigbukcet` will be used for storing Terrafor
 2.  **Generate SSH Key Pair:**
 
     ```bash
-    ssh-keygen -t rsa -b 4096 -m PEM -f ./my_key -N ""
+    ssh-keygen -t rsa -f ./my_key
     ```
     This command generates an RSA key pair without a passphrase and saves it to `my_key` (private key) and `my_key.pub` (public key) in the current directory.
 
@@ -87,6 +87,11 @@ A shared S3 bucket named `env-aftabsbigbukcet` will be used for storing Terrafor
     ssh ec2-user@<bastionip> -i ./my_key
     ```
 
+7.  **Use the below command in both network and webserver folder to destory all the resources**
+
+    ```bash
+    terraform destroy
+    ```
 
 
 
