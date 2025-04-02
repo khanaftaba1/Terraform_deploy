@@ -93,6 +93,9 @@ A shared S3 bucket named `env-aftabsbigbukcet` will be used for storing Terrafor
     terraform destroy
     ```
 
+    ![image](https://github.com/user-attachments/assets/9352c00e-945a-4141-bbe5-1334957b1f87)
+
+
 
 
 
